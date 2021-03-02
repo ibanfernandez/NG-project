@@ -1,0 +1,270 @@
+/*Importar fuentes personalizadas*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,900');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap');
+@font-face {
+    font-family: "yanone";
+    src: url("../fonts/Yanone.ttf");
+}
+
+@font-face {
+    font-family: "titillium";
+    src: url("../fonts/Titillium.ttf");
+}
+
+@font-face {
+    font-family: "finger";
+    src: url("../fonts/FingerPaint.ttf");
+}
+
+/* Generales */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    background: url("../img/pattern.png");
+    background-attachment: fixed;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+/* Header - Cabecera */
+
+header {
+    width: 100%;
+    height: 90px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, .8) 0%, rgba(9, 9, 121, .8) 22%, rgba(0, 212, 255, .8) 100%);
+    display: block;
+    position: fixed;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: block;
+    width: 34%;
+    height: inherit;
+    margin: 0 auto;
+    margin-top: -9px;
+}
+
+header ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 107px;
+    height: inherit;
+}
+
+header a {
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all .3s;
+}
+
+header a:hover, .actived {
+    background: rgba(0, 0, 0, .8);
+}
+
+/* Logo */
+
+#logo {
+    font-family: finger;
+    font-size: 45px;
+    letter-spacing: .1em;
+    margin: 0 .5em;
+}
+
+#logo a {
+    transition: .5s all;
+}
+
+header #logo a:hover {
+    background: transparent;
+    transform: scale(1.5);
+    color: black;
+}
+
+/* Contenedor principal */
+
+#content {
+    min-height: 800px;
+    padding-top: 120px;
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 40px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    background: rgba(255, 255, 255, .7);
+}
+
+/*Pie de página*/
+
+footer {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 15px;
+    color: rgba(0, 0, 0, .5);
+}
+
+/*Sobre mí*/
+
+.container {
+    padding: 0 4em;
+}
+
+#title {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#title h1 {
+    font-family: finger;
+    font-size: 2.25em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+
+#title h2 {
+    color: gray;
+    font-size: 1.5em;
+    padding-top: 1em;
+
+}
+
+article#about {
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+#about h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: .15em;
+    margin-bottom: .4em;
+}
+
+#about p {
+    padding-top: .5em;
+    text-align: justify;
+    font-weight: 200;
+}
+
+/*Sección formulario*/
+
+.container{
+    padding: 4em;
+    padding-top: 1em;
+}
+
+.container h2{ 
+    border-bottom: 1px solid #ccc;
+    padding-bottom: .5em;
+    margin-bottom: .85em;
+    display: block;
+}
+form {
+    width: 50%;
+}
+form label{
+    display: block;
+    width: 100%;
+    margin-top: .75em;
+    margin-bottom: .25em;
+}
+
+form input[type="text"],
+form input[type="number"],
+form p textarea {
+    width: 80%;
+    padding: 1.15em;
+    border-radius: 3%;
+}
+
+form p textarea {
+    border: 2px solid rgba(0, 0, 0, 0.788);
+}
+
+input[type="file"] {
+    display: none;
+
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 1.5em 1.5em;
+    border-radius: 93%;
+    text-align: center;
+    cursor: pointer;
+    width: 25%;
+    margin-left: 25%;
+    transition: .6s all;
+}
+.custom-file-upload:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+
+
+form input[type="submit"]{
+    color: rgb(252, 249, 249);
+    background-color: #356cdc;
+    border-radius: 14%;
+    font-size: 1em;
+    cursor: pointer;
+    display: block;
+    padding: 0.4em .6em;
+    margin-top: 1.25em;
+    margin-left: 37%;
+    transition: .5s all;
+    font-family: "Yanone Kaffeesatz";
+
+}
+
+form input[disabled]{
+    opacity: .2;
+}
+
+form input[type="submit"]:hover{
+
+    background-color: #293ba7;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+
+}
+
+
+.raise {
+    --color: #293ba7;
+    --hover: #293ba7;
+  }
+
+.d-block{
+    display: block;
+}
+
+.pt-4 {
+ 
+    padding-top: .5em;
+}
+
+.red{
+    color: rgb(223, 45, 0);
+}

@@ -1,0 +1,16 @@
+.success {
+    padding: .15em;
+    border: 1px solid #eee;
+    width: 50%;
+    background-color: rgb(6, 148, 6);
+    color: white;
+
+}
+
+h2{font-size: 2em;}
+
+.success a{
+
+    color: white;
+
+}

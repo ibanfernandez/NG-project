@@ -1,0 +1,46 @@
+<div class="container">
+    <h2> {{title}} </h2>
+    <div *ngIf="status==true" class="success">
+        El proyecto se ha creado correctamente puedes verlo <a href="#">aquí.</a>
+    </div>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+            <span *ngIf="name.touched && !name.valid" class="d-block pt-4 red">El nombre es obligatorio</span>
+        </p>
+
+        <p>
+            <label for="description">Descripción</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span *ngIf="description.touched && !description.valid" class="d-block pt-4 red">La descripción es obligatoria</span>
+        </p>
+
+        <p>
+            <label for="category">Categoría</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+            <span *ngIf="category.touched && !category.valid" class="d-block pt-4 red">La categoría es obligatoria</span>
+        </p>
+
+        <p>
+            <label for="year">Año</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" min="1990" max="2030">
+            <span *ngIf="year.touched && !year.valid" class="d-block pt-4 red">El año es obligatorio</span>
+        </p>
+
+        <p>
+            <label for="langs">Lenguajes empleados</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required>
+            <span *ngIf="langs.touched && !langs.valid" class="d-block pt-4 red">Los lenguajes son obligatorios</span>
+        </p>
+
+        <label for="file-upload" class="custom-file-upload">
+            <i class="fas fa-upload"></i> Subir imagen
+        </label>
+        <input id="file-upload" type="file"  name="image" #image="ngModel" [(ngModel)]="project.image" (change)="fileChangeEvent($event)" required />
+
+
+        <input type="submit" class="raise" value="Enviar" [disabled]="projectForm.form.invalid">
+
+    </form>
+</div>
