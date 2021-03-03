@@ -11,18 +11,22 @@ import { Global } from '../../services/global';
 })
 export class ProjectsComponent implements OnInit {
 
+  projects: Array<Project> = [];
+
   constructor(
     private _projectService: ProjectService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.getProjects());
+
   }
 
   getProjects() {
     this._projectService.getProjects().subscribe(
-      response=>console.log(response),
-      error=> console.log(error)
+      response => 
+          console.log(response)
+      ,
+      error => console.log(error)
     );
   }
 
