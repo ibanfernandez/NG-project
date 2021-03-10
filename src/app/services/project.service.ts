@@ -32,4 +32,12 @@ export class ProjectService {
         return this._http.get(this.url + 'projects', { headers: headers });
     }
 
+    getImage(): Observable<any> {
+        // let params = JSON.stringify(project);
+
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+        return this._http.get(this.url + 'get-image/ihVzoNImLEekDObZa4HE8un7', { headers: headers });
+    }
+
 }

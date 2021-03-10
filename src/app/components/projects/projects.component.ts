@@ -12,22 +12,33 @@ import { Global } from '../../services/global';
 export class ProjectsComponent implements OnInit {
 
   projects: Array<Project> = [];
+  public url: string = Global.url;
 
   constructor(
     private _projectService: ProjectService
   ) { }
 
   ngOnInit(): void {
-
+    this.getProjects();
   }
 
   getProjects() {
+
     this._projectService.getProjects().subscribe(
-      response => 
-          console.log(response)
+      response => {
+       
+        if (response) {
+          this.projects = response;
+          console.log(this.projects);
+          return this.projects;
+        }else{
+          return undefined;
+        };
+      }
       ,
       error => console.log(error)
     );
-  }
+
+  }  
 
 }
